@@ -4,17 +4,21 @@ public class CheckGuest {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
             String[] inviteeList = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti", "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
-            boolean invitee = false;
-            int a = 0;
+
+            boolean inviteeName = false;
             String name;
+            int a = 0;
             System.out.println("Guest Name: ");
             name = scan.nextLine();
-            for (a=0; inviteeList.length; a++){
-                if (name.equalsIgnoreCase(invitee)) {
-                    invitee = true;
-                    System.out.println("Welcome!");
-                } else {
-                    System.out.println("Sorry" + name + "You are not on the list.");
-                } scan.close();
-            }
+
+            while (a < inviteeList.length-1){
+                a++;
+                if (inviteeList[a].equals(name)){
+                    inviteeName = true;
+                    System.out.println("Welcome " + name + "!");
+                    break;}
+                } if (!inviteeName) {
+            System.out.println("Sorry " + name + " you are not on the list.");
+        } scan.close();
+    }
 }
